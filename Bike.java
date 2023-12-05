@@ -1,12 +1,6 @@
-package Vehicle;
+package com.skillstorm.groupwork;
 
-public class Bike implements Vehicle{
-
+public class Bike /* TODO 3 make Bike a vehicle */ {
 	private String color;
 	private int numGears;
-	
-	@Override
-	public void go() {
-		System.out.println("ring ring");
-}
 }
