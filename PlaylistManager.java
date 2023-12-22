@@ -7,21 +7,36 @@ public class PlaylistManager {
     private ListIterator<String> playlistIterator;
 
     public PlaylistManager() {
-        // Constructor code here
+    	this.playlist = new LinkedList<>();
+    	this.playlistIterator = playlist.listIterator();
     }
-
+    
     public void addSong(String song) {
-        // addSong() method code here
-    }
-
+    	playlist.add(song);    
+    	System.out.println(song + "Add to the playlist.");
+}
+    	
     public void play() {
-        // play() method code here
+    if (playlist.isEmpty()) {
+    	System.out.println("If playlist is empty, add sonds before playing.");
+    }
     }
 
     public void displayPlaylist() {
-        // displayPlaylist() method code here
+    	System.out.println("Playlist:");
+    	for (String song : playlist) {
+    		System.out.println(song);
+    	}
     }
 
+    private void removeSong(String song) {
+    	if (playlist.contains(song)) {
+    		playlist.remove(song);
+    		System.out.println(song + " remove from the playlist.");
+    	}else {
+    		System.out.println(song + " not found in the playlist.");
+    	}
+    }
     public static void main(String[] args) {
         // Main method for testing your PlaylistManager class
         PlaylistManager manager = new PlaylistManager();
@@ -40,10 +55,6 @@ public class PlaylistManager {
         // Displaying the updated playlist
         manager.displayPlaylist();
     }
-
-	private void removeSong(String string) {
-		// TODO Auto-generated method stub
-		
-	}
 }
+		
 
